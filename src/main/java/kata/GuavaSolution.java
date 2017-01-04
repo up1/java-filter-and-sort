@@ -10,10 +10,7 @@ import java.util.List;
 
 public class GuavaSolution {
     public List<String> filter(List<String> datas) {
-
-        final Predicate<String> predicate = item -> item.length() >= 4;
-
-        Collection<String> filtered = Collections2.filter(datas, predicate);
+        Collection<String> filtered = Collections2.filter(datas, item -> item.length() >= 4);
 
         Ordering<String> orderByLenght = new OrderingByLenght();
         List<String> outputs = orderByLenght.compound(Ordering.natural()).sortedCopy(filtered);
