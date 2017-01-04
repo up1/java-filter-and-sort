@@ -1,6 +1,5 @@
 package kata;
 
-import com.google.common.base.Predicate;
 import com.google.common.collect.Collections2;
 import com.google.common.collect.Ordering;
 import com.google.common.primitives.Ints;

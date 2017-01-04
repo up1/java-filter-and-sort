@@ -35,6 +35,13 @@ public class SimpleTest {
         compareOutput(outputs);
     }
 
+    @Test
+    public void withRxJavaSolution() {
+        RxJavaSolution solution = new RxJavaSolution();
+        List<String> outputs = solution.filter(datas);
+        compareOutput(outputs);
+    }
+
 
 
     private void compareOutput(List<String> outputs) {
