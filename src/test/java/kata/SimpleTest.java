@@ -21,16 +21,25 @@ public class SimpleTest {
         compareOutput(outputs);
     }
 
-    private void compareOutput(List<String> outputs) {
-        assertEquals(3, outputs.size());
-        assertThat(outputs, contains("Elephant", "Bird", "Fish"));
-    }
-
     @Test
     public void withJava8Solution() {
         Java8Solution solution = new Java8Solution();
         List<String> outputs = solution.filter(datas);
         compareOutput(outputs);
+    }
+
+    @Test
+    public void withGuavaSolution() {
+        GuavaSolution solution = new GuavaSolution();
+        List<String> outputs = solution.filter(datas);
+        compareOutput(outputs);
+    }
+
+
+
+    private void compareOutput(List<String> outputs) {
+        assertEquals(3, outputs.size());
+        assertThat(outputs, contains("Elephant", "Bird", "Fish"));
     }
 
     private java.util.List<String> listOf(String ... datas) {
