@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 public class Java8Solution {
     public List<String> filter(List<String> datas) {
         List<String> outputs = datas.stream()
-                .filter(s -> s.length() >= 4)
+                .filter(item -> item.length() >= 4)
                 .sorted(Comparator.comparing(String::length).reversed())
                 .collect(Collectors.toList());
         return outputs;
