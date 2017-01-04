@@ -9,19 +9,10 @@ import java.util.List;
 
 public class GuavaSolution {
     public List<String> filter(List<String> datas) {
-        Collection<String> filtered = Collections2.filter(datas, item -> item.length() >= 4);
-
-        Ordering<String> orderByLenght = new OrderingByLenght();
-        List<String> outputs = orderByLenght.compound(Ordering.natural()).sortedCopy(filtered);
-
-        return outputs;
+        return Ordering
+                .from((String a, String b) -> Ints.compare(a.length(), b.length()))
+                .reverse()
+                .sortedCopy(
+                        Collections2.filter(datas, data -> data.length() >= 4));
     }
 }
-
-class OrderingByLenght extends Ordering<String> {
-    @Override
-    public final int compare(final String firstItem, final String secondItem) {
-        return Ints.compare(secondItem.length(), firstItem.length());
-    }
-}
-
