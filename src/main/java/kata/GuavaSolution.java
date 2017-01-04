@@ -11,12 +11,7 @@ import java.util.List;
 public class GuavaSolution {
     public List<String> filter(List<String> datas) {
 
-        final Predicate<String> predicate = new Predicate<String>() {
-            @Override
-            public final boolean apply(final String item) {
-                return item.length() >= 4;
-            }
-        };
+        final Predicate<String> predicate = item -> item.length() >= 4;
 
         Collection<String> filtered = Collections2.filter(datas, predicate);
 
