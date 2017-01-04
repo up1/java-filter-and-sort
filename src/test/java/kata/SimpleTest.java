@@ -18,6 +18,10 @@ public class SimpleTest {
     public void withSimpleSolution() {
         FirstSolution solution = new FirstSolution();
         List<String> outputs = solution.filter(datas);
+        compareOutput(outputs);
+    }
+
+    private void compareOutput(List<String> outputs) {
         assertEquals(3, outputs.size());
         assertThat(outputs, contains("Elephant", "Bird", "Fish"));
     }
@@ -26,8 +30,7 @@ public class SimpleTest {
     public void withJava8Solution() {
         Java8Solution solution = new Java8Solution();
         List<String> outputs = solution.filter(datas);
-        assertEquals(3, outputs.size());
-        assertThat(outputs, contains("Elephant", "Bird", "Fish"));
+        compareOutput(outputs);
     }
 
     private java.util.List<String> listOf(String ... datas) {
